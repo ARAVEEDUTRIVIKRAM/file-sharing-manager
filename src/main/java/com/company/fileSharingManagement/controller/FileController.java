@@ -17,7 +17,7 @@ import org.springframework.ui.Model;
 
 @Controller
  @RequestMapping("/files")
-public class fileController {
+public class FileController {
 
     @Autowired
     private FileService fileService;

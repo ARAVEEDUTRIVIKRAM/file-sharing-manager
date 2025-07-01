@@ -124,9 +124,9 @@ nav .logo p{
     50% {
         width: 555px;
     }
-    /* 75% {
+    75% {
         width: 600px;
-    } */
+    } 
     100% {
         width: 555px; /* Path stops here, matching the airplane's stop point */
     }
@@ -359,3 +359,4 @@ button[type="submit"] {
     cursor: pointer;
     float: right;
 }
+

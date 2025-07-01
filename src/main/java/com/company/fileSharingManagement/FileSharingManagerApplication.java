@@ -4,10 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FileSharingManagementApplication {
+public class FileSharingManagerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(FileSharingManagementApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(FileSharingManagerApplication.class, args);
+    }
 }
+
+
