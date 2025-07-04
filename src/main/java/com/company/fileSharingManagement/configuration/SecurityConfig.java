@@ -11,11 +11,13 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .csrf(csrf -> csrf.disable()) // Disable CSRF for now; enable it in production
+            .csrf(csrf -> csrf.disable()) // You can enable this later
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/files", "/files/download/{id}", "/files/share/{id}", "/styles/**").permitAll()
-                .anyRequest().permitAll() // allow all for now; you can restrict later
-            );
+                .requestMatchers("/", "/files", "/files/download/**", "/files/share/**", "/styles/**").permitAll()
+                .anyRequest().authenticated()
+            )
+            .oauth2Login(); // 👈 This line enables Google & GitHub OAuth2 login
+
         return http.build();
     }
 }
