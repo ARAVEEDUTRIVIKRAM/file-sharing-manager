@@ -42,7 +42,7 @@ public class FileServiceImpl implements FileService {
         return ResponseEntity.ok().body(fileModel);
     }
 
-    public ResponseEntity<?> getFile(int id)  {
+    public ResponseEntity<?> getFile(Long id)  {
         Optional<FileEntity> fileEntityOptional = fileRepository.findById(id);
 
         if (fileEntityOptional.isPresent()) {
@@ -58,7 +58,7 @@ public class FileServiceImpl implements FileService {
         }
     }
 
-    public ResponseEntity<?> deleteFile(int id) {
+    public ResponseEntity<?> deleteFile(Long id) {
 
         Optional <FileEntity> entity = fileRepository.findById(id);
         if(entity.isPresent()){
@@ -96,7 +96,7 @@ public class FileServiceImpl implements FileService {
     }
 
     @Override
-    public ResponseEntity<?> shareFile(int id) {
+    public ResponseEntity<?> shareFile(Long id) {
         Optional <FileEntity> fileEntity = fileRepository.findById(id);
         if(fileEntity.isPresent()){
             FileEntity file = fileEntity.get();

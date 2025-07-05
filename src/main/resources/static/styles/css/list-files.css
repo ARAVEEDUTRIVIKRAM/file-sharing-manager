@@ -323,3 +323,14 @@ body {
 .uploaded-files-container .table-wrapper::-webkit-scrollbar-thumb:hover {
     background-color: #555;
 }
+
+.download-button {
+    color: #28a745;
+    font-size: 1.1rem;
+    padding: 5px;
+    text-decoration: none;
+}
+.download-button:hover {
+    color: #1e7e34;
+}
+
