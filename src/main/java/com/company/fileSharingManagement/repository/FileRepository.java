@@ -10,7 +10,7 @@ import com.company.fileSharingManagement.entity.FileEntity;
 
 
 @Repository
-public interface FileRepository extends JpaRepository<FileEntity, Integer> {
+public interface FileRepository extends JpaRepository<FileEntity, Long> {
     List<FileEntity> findByExpiryTimeBefore(LocalDateTime now);
 
 }
