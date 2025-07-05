@@ -13,10 +13,12 @@ public class SecurityConfig {
         http
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/", "/files", "/files/home", "/files/download/**", "/files/share/**", "/styles/**").permitAll()
+                .requestMatchers("/", "/files", "/files/download/**", "/files/share/**", "/styles/**", "/oauth2/**").permitAll()
                 .anyRequest().authenticated()
             )
-            .oauth2Login();
+            .oauth2Login(oauth -> oauth
+                .defaultSuccessUrl("/files/home", true) // 👈 THIS is the important line!
+            );
 
         return http.build();
     }
